@@ -231,7 +231,6 @@ const users = [
     }
   ];
 
-  
   function func(id, username, email) {
     if(id) {
     const user = users.find(users => users.id === id)
@@ -245,12 +244,10 @@ const users = [
       const user = users.find(users => users.email === email)
     console.log(user);
     }
-   
     else {
       console.log("This user is not found");
     }
     
   }
-  
   
   func(2, "Bret", "Chaim_McDermott@dana.io")
