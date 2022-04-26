@@ -231,23 +231,12 @@ const users = [
     }
   ];
 
-  function func(id, username, email) {
-    if(id) {
-    const user = users.find(users => users.id === id)
-    console.log(user);
-    }
-     if(username) {
-      const user = users.find(users => users.username === username)
-    console.log(user);
-    }
-    if(email) {
-      const user = users.find(users => users.email === email)
-    console.log(user);
-    }
-    else {
-      console.log("This user is not found");
-    }
-    
+  const findUserBySearchObject = (userParamsObject) => {
+    const key = Object.keys(userParamsObject)[0];
+
+    return users.find((user ) =>  {
+      return user[key] === userParamsObject[key];
+    });
   }
+   console.log(findUserBySearchObject({email: "Rey.Padberg@karina.biz"}));
   
-  func(2, "Bret", "Chaim_McDermott@dana.io")
